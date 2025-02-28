@@ -33,4 +33,4 @@ git add .
 git commit -m "Initial commit: Add project files"
 
 # 10. 推送到遠端（設定 dev 為預設分支）
-git push -u origin dev
+git push origin dev
