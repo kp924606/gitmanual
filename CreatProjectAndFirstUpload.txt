@@ -1,3 +1,36 @@
+# 1.請先在github上建立您的repository
 
+# 2. 請使用 cmd 並切換(cd)至您的專案資料夾內
 
-123
+# 3. 初始化 Git（如果尚未初始化）
+git init
+
+# 4. 建立並切換到 dev 分支（預設分支）
+git checkout -b dev
+
+# 5. 若您遠端的尚未有README.md,新增 README.md
+echo "# GitManual" > README.md
+
+# 6. 若您遠端的尚未有License,增 GNU General Public License v3.0。 curl 忽略 SSL 憑證檢查。
+curl -o LICENSE --insecure "https://www.gnu.org/licenses/gpl-3.0.txt"
+
+/*
+curl -o LICENSE "https://www.gnu.org/licenses/gpl-3.0.txt"
+(會檢查憑證)
+wget -O LICENSE https://www.gnu.org/licenses/gpl-3.0.txt
+(使用PowerShell，切換到指定的目錄再執行:Invoke-WebRequest -Uri "https://www.gnu.org/licenses/gpl-3.0.txt" -OutFile "LICENSE")
+*/
+
+# 7. 設定遠端倉庫（替換 <YOUR_GITHUB_USERNAME>）
+git remote add origin https://github.com/{your_github_username}/{your_github_repository}.git
+//git remote add origin https://github.com/kp924606/gitmanual.git
+
+# 8.從 git 遠端的分支(dev)更新檔案到本地端,注意分支名稱
+git pull origin dev
+
+# 9. 添加本地端所有檔案並提交
+git add .
+git commit -m "Initial commit: Add project files"
+
+# 10. 推送到遠端（設定 dev 為預設分支）
+git push -u origin dev
