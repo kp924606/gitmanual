@@ -1,0 +1,68 @@
+
+1.檢測到 LICENSE 檔案的行尾符號是 LF (\n)，但你的 Git 設定會將它轉換為 CRLF (\r\n)，這通常發生在 Windows 系統上。
+錯誤資訊:
+warning: in the working copy of 'LICENSE', LF will be replaced by CRLF the next time Git touches it
+
+發生動作:
+git add .
+
+解法:
+統一使用 LF 推薦, 如果你的團隊主要使用 Linux/macOS，或你希望確保跨平台行為一致，可以執行(只須執行1次即可):
+git config --global core.autocrlf input
+
+------
+
+2.遠端倉庫 URL 錯誤、尚未建立遠端倉庫、GitHub 認證問題
+錯誤資訊:
+remote: Repository not found.
+fatal: repository 'https://github.com/{YOUR_GITHUB_USERNAME}/{YOUR_GITHUB_Repository}.git/' not found
+
+發生動作:
+git push -u origin dev
+
+解法:
+	1. 遠端倉庫 URL 錯誤
+	請確認遠端倉庫的 URL 是否正確。錯誤的 URL（像是大小寫）會導致找不到倉庫。
+	可查詢當前的遠端 URL，使用以下指令：
+	git remote -v
+	若顯示的 URL 不正確（例如小寫或錯誤的用戶名），可以執行以下指令修改遠端 URL：
+	git remote set-url origin https://github.com/{YOUR_GITHUB_USERNAME}/{YOUR_GITHUB_Repository}.git
+
+	2. 尚未建立遠端倉庫
+	確認你在 GitHub 上是否已經建立了名為 {YOUR_GITHUB_Repository} 的遠端倉庫，並且該倉庫是公開的，或者你有訪問權限。
+	如果沒有建立倉庫，請在 GitHub 上建立 {YOUR_GITHUB_Repository} 倉庫。
+	若倉庫已存在，確保你有訪問該倉庫的權限。
+	
+	3. GitHub 認證問題
+	如果遠端 URL 正確，但仍然無法推送，可能是因為 GitHub 的認證問題，尤其是使用 HTTPS 時。
+	你可以重新驗證 GitHub 的認證，使用以下指令：
+	git credential-manager-core erase
+
+------
+
+3.Windows Schannel（SSL/TLS）問題
+錯誤資訊:
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:--  0:00:06 --:--:--     0
+curl: (35) schannel: next InitializeSecurityContext failed: CRYPT_E_NO_REVOCATION_CHECK (0x80092012) - 撤銷功能無法檢查 憑證的撤銷。
+
+發生動作:
+curl -o LICENSE "https://www.gnu.org/licenses/gpl-3.0.txt"
+
+解法:
+	1.使用 wget 下載（推薦）
+	如果你的系統有 wget，可以用它代替 curl：
+	wget -O LICENSE https://www.gnu.org/licenses/gpl-3.0.txt
+	
+	2.關閉憑證檢查（不建議長期使用）
+	可以讓 curl 忽略 SSL 憑證檢查：
+	curl -o LICENSE --insecure "https://www.gnu.org/licenses/gpl-3.0.txt"
+	
+	3.更新 curl 或 Windows 憑證
+	如果你的 curl 版本太舊，或者 Windows 憑證有問題，可以：
+	下載 最新版本的 curl、更新 Windows 憑證(Windows Update)，確保系統是最新的
+
+------
+
+
