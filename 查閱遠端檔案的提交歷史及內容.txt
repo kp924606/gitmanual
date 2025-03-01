@@ -1,0 +1,40 @@
+查閱遠端檔案的提交歷史及內容
+
+# 1. 請使用 cmd 並切換(cd)至您的專案資料夾內
+
+# 2. 請執行以下指令, 這邊使用的檔名為:Debug.txt
+git log --follow -- Debug.txt
+
+	commit 1032a72b3b7032439d671e726a9797c9300b4e9a
+	Author: Cheng Ting Tsai <xxx@yyy.com>
+	Date:   Fri Feb 28 19:28:08 2025 +0800
+
+		Add debug
+
+	diff --git a/Debug.txt b/Debug.txt
+	new file mode 100644
+	index 0000000..e2d3412
+	--- /dev/null
+	+++ b/Debug.txt
+	@@ -0,0 +1,68 @@
+	+
+	+1.檢測到 LICENSE 檔案的行尾符號是 LF (\n)，但你的 Git 設定會將它轉換為 CRLF (\r\n)，這通常發生在 Windows 系統上。
+	+錯誤資訊:
+	......
+
+/*
+如果內容太多，你可以用以下方式快速瀏覽：
+
+方向鍵 ↑ / ↓ 或 k / j → 上/下移動一行。
+空白鍵 → 向下翻一頁。
+b → 向上翻一頁。
+g → 跳到最開頭。
+G → 跳到最後。
+/關鍵字 → 搜尋關鍵字（按 n 跳到下一個匹配項）。
+當你閱讀完內容後，直接按 q 就可以跳出 git log 了
+*/
+
+# 3. 如果只想查看簡要歷史（不顯示詳細提交訊息）,請執行以下指令, 這邊使用的檔名為:Debug.txt
+git log --oneline -- Debug.txt
+
+	8032a72 Add debug

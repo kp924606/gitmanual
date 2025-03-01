@@ -3,6 +3,18 @@
 # 2. 切換到 dev 分支
 git checkout dev
 
-# 3. 請執行以下指令, 從 git 遠端的分支(dev)更新檔案到本地端
+# 3. 檢查本地端與遠端的差異
+git fetch
+git diff HEAD origin/$(git branch --show-current)
+
+/*
+git fetch 只會抓取遠端的最新變更，但不會合併到本地端。
+git diff HEAD origin/$(git branch --show-current) 會顯示本地端與遠端的差異。
+
+想知道具體有哪些檔案有變更，可以用：
+git diff --name-only HEAD origin/$(git branch --show-current)
+*/
+
+# 4. 請執行以下指令, 從 git 遠端的分支(dev)更新檔案到本地端
 git pull origin dev
 

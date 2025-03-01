@@ -1,0 +1,10 @@
+UpdateLocalToRemote
+
+# 1. 請使用 cmd 並切換(cd)至您的專案資料夾內
+
+# 2. 請執行以下指令
+git checkout dev
+git add .
+git commit -m "更新較新的本地檔案"
+git push origin dev
+
