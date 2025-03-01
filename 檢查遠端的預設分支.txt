@@ -1,0 +1,20 @@
+檢查遠端的預設分支
+
+# 1. 請使用 cmd 並切換(cd)至您的專案資料夾內
+
+# 2. 請執行以下指令
+git remote show origin
+
+	在輸出的 HEAD branch 行可以看到遠端的預設分支
+	
+	* remote origin
+	Fetch URL: https://github.com/kp924606/gitmanual.git
+	Push  URL: https://github.com/kp924606/gitmanual.git
+	HEAD branch: dev
+	Remote branch:
+	dev tracked
+	Local branch configured for 'git pull':
+	dev merges with remote dev
+	Local ref configured for 'git push':
+	dev pushes to dev (local out of date)
+	

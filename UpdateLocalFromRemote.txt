@@ -1,0 +1,8 @@
+# 1. 請使用 cmd 並切換(cd)至您的專案資料夾內
+
+# 2. 切換到 dev 分支
+git checkout dev
+
+# 3. 請執行以下指令, 從 git 遠端的分支(dev)更新檔案到本地端
+git pull origin dev
+
