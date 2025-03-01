@@ -1,0 +1,15 @@
+檢查本地端是否落後或領先遠端
+
+# 1. 請使用 cmd 並切換(cd)至您的專案資料夾內
+
+# 2. 請執行以下指令
+git fetch
+git status
+
+/*
+git status 會顯示：
+"Your branch is ahead of 'origin/main' by X commits."（表示本地有未推送的提交）
+"Your branch is behind 'origin/main' by X commits."（表示遠端有新變更）
+"Your branch is up to date with 'origin/main'."（表示本地與遠端一致）
+*/
+

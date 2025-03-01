@@ -1,0 +1,9 @@
+顯示遠端倉庫 URL
+
+# 1. 請使用 cmd 並切換(cd)至您的專案資料夾內
+
+# 2. 請執行以下指令
+git remote -v
+
+	origin  https://github.com/kp924606/gitmanual.git (fetch)
+	origin  https://github.com/kp924606/gitmanual.git (push)

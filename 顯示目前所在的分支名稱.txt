@@ -1,0 +1,7 @@
+顯示目前所在的分支名稱
+
+# 1. 請使用 cmd 並切換(cd)至您的專案資料夾內
+
+# 2. 請執行以下指令
+git branch --show-current
+	dev

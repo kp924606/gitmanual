@@ -1,0 +1,12 @@
+檢查本地端與遠端的差異
+
+# 1. 請使用 cmd 並切換(cd)至您的專案資料夾內
+
+# 2. 請執行以下指令
+git fetch
+git diff HEAD origin/$(git branch --show-current)
+
+/*
+git fetch 只會抓取遠端的最新變更，但不會合併到本地端。
+git diff HEAD origin/$(git branch --show-current) 會顯示本地端與遠端的差異。
+*/
