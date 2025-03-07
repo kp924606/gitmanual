@@ -1,0 +1,19 @@
+上傳大檔案
+
+# 1. 安裝 Git LFS
+https://git-lfs.com/
+
+# 2. 請使用 cmd 並切換(cd)至您的專案資料夾內
+
+# 3. 安裝, 請執行以下指令
+git lfs install
+
+# 4. 請執行以下指令
+git lfs version
+	git-lfs/3.6.1 (GitHub; windows amd64; go 1.23.3; git ea47a34b)
+
+# 5. 請將指定的檔案上傳
+git lfs track "shape_predictor_68_face_landmarks.dat"
+git add .gitattributes shape_predictor_68_face_landmarks.dat
+git commit -m "使用 Git LFS 管理大檔案"
+git push origin dev
