@@ -65,4 +65,27 @@ curl -o LICENSE "https://www.gnu.org/licenses/gpl-3.0.txt"
 
 ------
 
+4.上傳大檔案
+
+錯誤資訊:
+info: please complete authentication in your browser...
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 68.98 MiB | 2.86 MiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: warning: See https://gh.io/lfs for more information.
+remote: warning: File shape_predictor_68_face_landmarks.dat is 95.08 MB; this is larger than GitHub's recommended maximum file size of 50.00 MB
+remote: warning: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.
+To https://github.com/kp924606/VideoCapture_py.git
+ea59735..ece3dca  dev -> dev
+
+發生動作:
+git push origin dev
+
+解法:
+	1.請參閱"上傳大檔案.txt"
+
+------
 
