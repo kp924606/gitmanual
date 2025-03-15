@@ -1,0 +1,14 @@
+將資料夾從 Git 遠端儲存庫中移除
+
+# 1. 請使用 cmd 並切換(cd)至您的專案資料夾內
+
+# 2. 請執行以下指令，注意此處的資料夾名為(Document/)請確認大小寫及路徑
+git rm -r --cached Document/
+
+
+/*
+git status 會顯示：
+
+rm 'Document/UI.drawio'
+rm 'Document/image/test.png'
+*/

@@ -1,0 +1,33 @@
+完全從 Git 歷史中移除該資料夾
+
+# 1.請先在github上建立您的repository
+
+# 2. 請使用 cmd 並切換(cd)至您的專案資料夾內
+
+# 3. 請先確認是否已經安裝過套件 filter-repo, 若無請執行以下指令:
+
+pip install git-filter-repo
+
+/*
+git status 會顯示：
+
+Collecting git-filter-repo
+  Downloading git_filter_repo-2.47.0-py3-none-any.whl (76 kB)
+     ---------------------------------------- 76.3/76.3 kB 1.1 MB/s eta 0:00:00
+Installing collected packages: git-filter-repo
+Successfully installed git-filter-repo-2.47.0
+
+[notice] A new release of pip available: 22.2.1 -> 25.0.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+*/
+
+
+
+# 4. 請執行以下指令, 這邊使用的檔名為:Debug.txt
+
+git filter-repo --path Document --invert-paths
+Aborting: Refusing to destructively overwrite repo history since
+this does not look like a fresh clone.
+  (expected freshly packed repo)
+Please operate on a fresh clone instead.  If you want to proceed
+anyway, use --force.

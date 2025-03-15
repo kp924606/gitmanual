@@ -25,12 +25,19 @@ wget -O LICENSE https://www.gnu.org/licenses/gpl-3.0.txt
 git remote add origin https://github.com/{your_github_username}/{your_github_repository}.git
 //git remote add origin https://github.com/kp924606/gitmanual.git
 
-# 8.從 git 遠端的分支(dev)更新檔案到本地端,注意分支名稱
+# 8.從 git 遠端的分支(dev)提取檔案到本地端(非更新覆蓋)並確認差異檔案
+git fetch
+
+# 9.從 git 遠端的分支(dev)更新檔案到本地端,注意分支名稱
 git pull origin dev
 
-# 9. 添加本地端所有檔案並提交
+# 10.統一使用 LF 推薦, 如果你的團隊主要使用 Linux/macOS，或你希望確保跨平台行為一致
+git config --global core.autocrlf input
+
+# 11. 添加本地端所有檔案並提交
 git add .
+git status
 git commit -m "Initial commit: Add project files"
 
-# 10. 推送到遠端（設定 dev 為預設分支）
+# 11. 推送到遠端（設定 dev 為預設分支）
 git push origin dev
