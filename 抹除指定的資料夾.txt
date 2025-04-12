@@ -1,0 +1,50 @@
+查閱遠端檔案的提交歷史及內容
+
+# 1. 請使用 cmd 並切換(cd)至您的專案資料夾內
+
+
+# 2. 請在".gitignore"新增要忽略的資料夾(未來push時將會忽略)
+{YourProjectFolder}/bin/Release/net8.0-windows/log/
+{YourProjectFolder}/bin/Debug/net8.0-windows/log/
+
+
+# 3. 請執行以下指令,做刪除:
+
+git filter-repo --force ^
+  --path {YourProjectFolder}/bin/Release/net8.0-windows/log/ ^
+  --path {YourProjectFolder}/bin/Debug/net8.0-windows/log/ ^
+  --invert-paths
+  
+  
+	NOTICE: Removing 'origin' remote; see 'Why is my origin removed?'
+			in the manual if you want to push back there.
+			(was https://github.com/kp924606/{YourProject}.git)
+	Parsed 17 commits
+	New history written in 1.07 seconds; now repacking/cleaning...
+	Repacking your repo and cleaning out old unneeded objects
+	HEAD is now at 6ac3492 Update
+	Enumerating objects: 1309, done.
+	Counting objects: 100% (1309/1309), done.
+	Delta compression using up to 4 threads
+	Compressing objects: 100% (1171/1171), done.
+	Writing objects: 100% (1309/1309), done.
+	Total 1309 (delta 1048), reused 193 (delta 95), pack-reused 0
+	Completely finished after 3.58 seconds.
+
+
+# 4. 請執行以下指令,重新設定遠端:
+git remote add origin https://github.com/kp924606/{YourProject}.git
+
+
+# 5. 請執行以下指令,重新上拋:
+
+git push --force origin dev
+	Enumerating objects: 1309, done.
+	Counting objects: 100% (1309/1309), done.
+	Delta compression using up to 4 threads
+	Compressing objects: 100% (218/218), done.
+	Writing objects: 100% (1309/1309), 7.02 MiB | 818.00 KiB/s, done.
+	Total 1309 (delta 1048), reused 1309 (delta 1048), pack-reused 0
+	remote: Resolving deltas: 100% (1048/1048), done.
+	To https://github.com/kp924606/VisualCapture.git
+	 + 892239a...6ac3492 dev -> dev (forced update)

@@ -27,6 +27,8 @@ git remote add origin https://github.com/{your_github_username}/{your_github_rep
 
 # 8.從 git 遠端的分支(dev)提取檔案到本地端(非更新覆蓋)並確認差異檔案
 git fetch
+git status
+git diff --name-only origin/dev
 
 # 9.從 git 遠端的分支(dev)更新檔案到本地端,注意分支名稱
 git pull origin dev
