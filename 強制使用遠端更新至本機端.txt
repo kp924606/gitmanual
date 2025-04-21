@@ -1,0 +1,13 @@
+查閱遠端檔案的提交歷史及內容
+
+# 1. 請使用 cmd 並切換(cd)至您的專案資料夾內
+
+# 2. 放棄本地所有修改與衝突
+git reset --hard
+
+# 3. 清除 untracked files（非版本控制中的新檔案）
+git clean -fd
+
+# 4. 強制拉取遠端分支並覆蓋本地
+git fetch origin
+git reset --hard origin/dev
